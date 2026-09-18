@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/Workflow-CI/Workflow-CI/MLProject/mlruns/0/ad84a55ff14246c9885782a7a173cf57/artifacts
+end_time: 1789706607953
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ad84a55ff14246c9885782a7a173cf57
+run_name: popular-snipe-275
+run_uuid: ad84a55ff14246c9885782a7a173cf57
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1789706598523
+status: 3
+tags: []
+user_id: runner
