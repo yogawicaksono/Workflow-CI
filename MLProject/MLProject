@@ -1,0 +1,9 @@
+name: telco_customer_churn_ci
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      data_path: {type: str, default: "namadataset_preprocessing"}
+    command: "python modelling.py --data_path {data_path}"

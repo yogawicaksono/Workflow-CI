@@ -1,0 +1,21 @@
+Tautan Docker Hub untuk submission ini:
+
+https://hub.docker.com/r/<GANTI-USERNAME-DOCKERHUB>/telco-churn-model
+
+Cara mendapatkan tautan ini:
+1. Buat akun di https://hub.docker.com jika belum punya.
+2. Buat Access Token: Account Settings -> Security -> New Access Token
+   (jangan pakai password akun langsung, gunakan token).
+3. Tambahkan 2 secrets berikut di repo GitHub ini
+   (Settings -> Secrets and variables -> Actions -> New repository secret):
+     - DOCKERHUB_USERNAME  = username Docker Hub kamu
+     - DOCKERHUB_TOKEN     = access token yang dibuat di langkah 2
+4. Pastikan juga Settings -> Actions -> General -> Workflow permissions
+   diset ke "Read and write permissions" (dibutuhkan untuk commit artefak
+   MLflow kembali ke repo).
+5. Trigger workflow (push ke folder MLProject/, atau jalankan manual lewat
+   tab Actions -> "CI - Model Retraining & Docker Build" -> Run workflow).
+6. Setelah workflow sukses, image akan otomatis ter-push ke:
+   https://hub.docker.com/r/<username_dockerhub>/telco-churn-model
+7. Ganti baris paling atas file ini dengan tautan asli tersebut, contoh:
+   https://hub.docker.com/r/yogawicaksono/telco-churn-model
