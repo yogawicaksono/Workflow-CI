@@ -70,3 +70,13 @@ jobs:
       - name: Push Docker image ke Docker Hub
         run: |
           docker push "${{ secrets.DOCKERHUB_USERNAME }}/${{ env.DOCKER_IMAGE_NAME }}:latest"
+
+      - name: Upload artefak MLflow ke repository (GitHub)
+        working-directory: MLProject
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add mlruns
+          git diff --quiet --cached || git commit -m "chore: update MLflow run artifacts [automated]"
+          git pull --rebase origin main
+          git push
